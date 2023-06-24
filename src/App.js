@@ -1,25 +1,37 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { useState, useEffect } from 'react';
+import EmployeeList from './components/EmployeeList';
 
-function App() {
+const App = () => {
+  const [employees, setEmployees] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
+
+  useEffect(() => {
+    fetch('https://reqres.in/api/users?page=2')
+      .then((response) => response.json())
+      .then((data) => setEmployees(data.data));
+  }, []);
+
+  const handleSearch = (e) => {
+    setSearchTerm(e.target.value);
+  };
+
+  const filteredEmployees = employees.filter((employee) =>
+    employee.first_name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container mt-4">
+      <input
+        type="text"
+        className="form-control mb-4"
+        placeholder="Search by first name"
+        value={searchTerm}
+        onChange={handleSearch}
+      />
+      <EmployeeList employees={filteredEmployees} />
     </div>
   );
-}
+};
 
 export default App;
