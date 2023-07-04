@@ -20,9 +20,9 @@ You may also see any lint errors in the console.
 
 ### Screnshots of the app
 
-![Screenshot (52)](https://github.com/sohansshetty/greendzine-internship-assignment/assets/77954795/1b6e6c4a-5230-455e-8854-cb67dbe7291e)
+![Screenshot (55)](https://github.com/sohansshetty/Internship-assignment/assets/77954795/9a223f15-f143-4a1f-930c-b5b973c1323f)
 
-![Screenshot (54)](https://github.com/sohansshetty/greendzine-internship-assignment/assets/77954795/0373167d-deb7-41f3-8dec-f9092becaee0)
+![Screenshot (57)](https://github.com/sohansshetty/Internship-assignment/assets/77954795/983de995-40fa-494b-942b-69e5b741fe23)
 
 ### Deployment
 
@@ -31,3 +31,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
