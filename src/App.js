@@ -14,10 +14,10 @@ const App = () => {
   return (
     <div className="container-center">
       <div className="row">
-        <div className="col-md-2">
+        <div className="col">
           <LeftComponent data={data} onItemClick={handleItemClick} />
         </div>
-        <div className="col-md-2">
+        <div className="col">
           <RightComponent id={selectedId} />
         </div>
       </div>
