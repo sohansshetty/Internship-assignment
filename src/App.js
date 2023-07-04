@@ -1,35 +1,26 @@
 import './App.css';
-import React, { useState, useEffect } from 'react';
-import EmployeeList from './components/EmployeeList';
+import React, { useState } from 'react';
+import LeftComponent from './LeftComponent';
+import RightComponent from './RightComponent';
+import data from './data'; 
 
 const App = () => {
-  const [employees, setEmployees] = useState([]);
-  const [searchTerm, setSearchTerm] = useState('');
+  const [selectedId, setSelectedId] = useState(3);
 
-  useEffect(() => {
-    fetch('https://reqres.in/api/users?page=2')
-      .then((response) => response.json())
-      .then((data) => setEmployees(data.data));
-  }, []);
-
-  const handleSearch = (e) => {
-    setSearchTerm(e.target.value);
+  const handleItemClick = (id) => {
+    setSelectedId(id);
   };
 
-  const filteredEmployees = employees.filter((employee) =>
-    employee.first_name.toLowerCase().includes(searchTerm.toLowerCase())
-  );
-
   return (
-    <div className="container mt-4">
-      <input
-        type="text"
-        className="form-control mb-4"
-        placeholder="Search by first name"
-        value={searchTerm}
-        onChange={handleSearch}
-      />
-      <EmployeeList employees={filteredEmployees} />
+    <div className="container-center">
+      <div className="row">
+        <div className="col-md-2">
+          <LeftComponent data={data} onItemClick={handleItemClick} />
+        </div>
+        <div className="col-md-2">
+          <RightComponent id={selectedId} />
+        </div>
+      </div>
     </div>
   );
 };
